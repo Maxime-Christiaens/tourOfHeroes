@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'tourOfHeroes';
+  title = 'The Tour of Heroes';
+  bool: boolean;
 }

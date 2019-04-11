@@ -1,0 +1,5 @@
+<h2>{{ title }}</h2>
+
+<button [routerLink]="['/hero', hero.id]" *ngFor="let hero of heroes | filterArray: 4; let i = index">
+    N°{{ i }} : {{ hero.name }}
+</button>

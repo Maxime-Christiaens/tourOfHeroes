@@ -1,0 +1,9 @@
+<div *ngIf="!connected">
+  <h2>Vous n'êtes pas connecté</h2>
+  <button (click)="logIn()">Connexion</button>
+</div>
+
+<div *ngIf="connected">
+  <h2>Vous êtes connecté</h2>
+  <button (click)="logOut()">Déconnexion</button>
+</div>

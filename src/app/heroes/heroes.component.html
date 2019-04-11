@@ -1,0 +1,18 @@
+<div class="mainDiv" *ngIf="!displayHero">
+    <h2>{{ title }}</h2>
+
+    <div class="linkDiv">
+        <a *ngFor="let hero of heroes; let index=index" (click)="getMyHero(index)">
+            N°{{ hero.id }} : {{ hero.name | uppercase }}
+        </a>
+    </div>
+    <div *ngIf="myHero">
+        <h2>{{ myHero.name | uppercase }} is my hero</h2>
+        <button (click)="displayDetail()">Detail</button>
+    </div>
+</div>
+<div class="linkDiv mainDiv" *ngIf="displayHero">
+    <h2> {{ myHero.name | uppercase }} Details! </h2>
+    <input [(ngModel)]="myHero.name">
+    <button (click)="displayDetail()">Back</button>
+</div>
