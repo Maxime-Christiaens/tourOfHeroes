@@ -7,6 +7,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroComponent } from './hero/hero.component';
 import { HappyComponent } from './happy/happy.component';
 import { ApiPostComponent } from './api-post/api-post.component';
+import { ParentComponent } from './parent/parent.component';
 //Guards
 import { LoginGuard } from './guards/login/login.guard';
 
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'api-post',
     component: ApiPostComponent
+  },
+  {
+    path: 'parent',
+    component: ParentComponent
   },
   {
     path: '**',

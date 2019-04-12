@@ -1,0 +1,4 @@
+<h3>Message = {{ message }}</h3>
+<p>Text : {{ text }}</p>
+<p>Yur Numbor :  {{ number }} </p>
+<app-enfant [refuse]="'refuse'" [(text)]="text" [(number)]="number" (messageEvent)="receiveMessage($event)"></app-enfant>

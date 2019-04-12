@@ -17,17 +17,29 @@ export class ApiPostComponent implements OnInit {
 
   ngOnInit() {
     this.postProvider.getPosts().subscribe((data) => {
-        this.posts = data; 
-        //console.log(this.posts);
+      this.posts = data;
+      //console.log(this.posts);
     });
   }
-  
-  getId(id){
+
+  getId(id: number): void {
     this.multiPost = false;
-    this.post = this.posts[id-1];
+    console.log(id)
+    //If the id that we get (by the click) is equal to the id of a post then it show the id 
+    /*
+    this.post = this.posts.find(function(post){
+      if(post.id = id){
+        return post
+      }
+    })
+    */
+    this.post = this.posts.find(post => post.id === id);
+    console.log(this.post)
   }
 
-  getPosts(){
+  getPosts() {
     this.multiPost = true;
   }
 }
+
+

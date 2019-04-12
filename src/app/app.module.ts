@@ -20,6 +20,8 @@ import { HappyComponent } from './happy/happy.component';
 // providers
 import { ApiModule } from './providers/api.module';
 import { ApiPostComponent } from './api-post/api-post.component';
+import { ParentComponent } from './parent/parent.component';
+import { EnfantComponent } from './parent/enfant/enfant.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ApiPostComponent } from './api-post/api-post.component';
     FilterArrayPipe,
     LoginComponent,
     HappyComponent,
-    ApiPostComponent
+    ApiPostComponent,
+    ParentComponent,
+    EnfantComponent
   ],
   imports: [
     ApiModule.forRoot(),
