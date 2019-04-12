@@ -6,8 +6,11 @@
 </div>
 
 <div *ngIf="!multiPost">
+  <h2>
+    N°{{ post.id }} : {{ post.title }}
+  </h2>
   <p>
-    Object = {{ post.id }}
+    {{ post.body }}
   </p>
   <button (click)="getPosts()" >Back</button>
 </div>

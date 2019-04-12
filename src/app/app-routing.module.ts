@@ -42,6 +42,7 @@ const routes: Routes = [
   {
     path: 'api',
     component: HappyComponent,
+    canActivate : [LoginGuard],
     resolve: {
       todos: TodoResolver
     }
@@ -49,16 +50,19 @@ const routes: Routes = [
   {
     path: 'api/:id',
     component: HappyComponent,
+    canActivate : [LoginGuard],
     resolve: {
       todo: TodoResolver
-    }
+    },
   },
   {
     path: 'api-post',
-    component: ApiPostComponent
+    component: ApiPostComponent,
+    canActivate : [LoginGuard]
   },
   {
     path: 'parent',
+    canActivate : [LoginGuard],
     component: ParentComponent
   },
   {
