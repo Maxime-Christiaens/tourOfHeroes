@@ -5,8 +5,12 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroComponent } from './hero/hero.component';
+import { HappyComponent } from './happy/happy.component';
+import { ApiPostComponent } from './api-post/api-post.component';
 //Guards
 import { LoginGuard } from './guards/login/login.guard';
+
+import { TodoResolver } from './app.resolver';
 
 
 const routes: Routes = [
@@ -35,14 +39,33 @@ const routes: Routes = [
     canActivate : [LoginGuard]
   },
   {
+    path: 'api',
+    component: HappyComponent,
+    resolve: {
+      todos: TodoResolver
+    }
+  },
+  {
+    path: 'api/:id',
+    component: HappyComponent,
+    resolve: {
+      todo: TodoResolver
+    }
+  },
+  {
+    path: 'api-post',
+    component: ApiPostComponent
+  },
+  {
     path: '**',
-    component: DashboardComponent
+    redirectTo: '/dashboard'
   }
 ];
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [TodoResolver]
 })
 export class AppRoutingModule { }

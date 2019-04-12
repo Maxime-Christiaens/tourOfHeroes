@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +14,12 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroComponent } from './hero/hero.component';
 //Pipe
 import { FilterArrayPipe } from './pipes/filterArray.pipe';
+import { HappyComponent } from './happy/happy.component';
 //guard
+
+// providers
+import { ApiModule } from './providers/api.module';
+import { ApiPostComponent } from './api-post/api-post.component';
 
 
 @NgModule({
@@ -26,13 +29,16 @@ import { FilterArrayPipe } from './pipes/filterArray.pipe';
     HeroesComponent,
     HeroComponent,
     FilterArrayPipe,
-    LoginComponent
+    LoginComponent,
+    HappyComponent,
+    ApiPostComponent
   ],
   imports: [
+    ApiModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

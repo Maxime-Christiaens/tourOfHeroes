@@ -1,0 +1,11 @@
+<div *ngIf="multiTodo">
+  <div [routerLink]="['/api', todo.id]" *ngFor="let todo of todos">
+    <p> {{ todo.title }} : id = {{ todo.id }} </p>
+  </div>
+</div>
+
+<div *ngIf="!multiTodo">
+  <p> {{ todos.id }} </p>
+  <p> {{ todos.title }} </p>
+  <button [routerLink]="['/api']"> Go Back </button>
+</div>
