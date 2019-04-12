@@ -1,7 +1,14 @@
 
-<div>
-  <p *ngFor="let post of posts">
+<div *ngIf="multiPost">
+  <p *ngFor="let post of posts" (click)="(getId(post.id))">
     {{ post.title }} {{ post.id }}
   </p>
+</div>
+
+<div *ngIf="!multiPost">
+  <p>
+    {{ post.title }}
+  </p>
+  <button (click)="getPosts()" >Back</button>
 </div>
 

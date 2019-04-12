@@ -1,7 +1,5 @@
-import { Component, OnInit, Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { PostProvider } from '../providers/post.provider';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-api-post',
@@ -11,25 +9,25 @@ import { Observable } from 'rxjs';
 
 export class ApiPostComponent implements OnInit {
   posts: any;
+  post: any;
+  multiPost: boolean = true;
 
-  constructor(private postProvider: PostProvider, private route: ActivatedRoute) {
-    /*
-    this.route.params.subscribe((params) => { 
-      if (params.id) {
-        this.posts = this.route.snapshot.data.post;
-      } else {
-        this.posts = this.route.snapshot.data.posts;
-      }
-  });
-  */
+  constructor(private postProvider: PostProvider) {
   }
 
   ngOnInit() {
     this.postProvider.getPosts().subscribe((data) => {
-        //this.posts = data; 
-        console.log(this.posts);
+        this.posts = data; 
+        //console.log(this.posts);
     });
   }
   
+  getId(id){
+    this.multiPost = false;
+    this.post = this.posts[id-1];
+  }
 
+  getPosts(){
+    this.multiPost = true;
+  }
 }

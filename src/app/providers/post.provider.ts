@@ -18,6 +18,7 @@ export class PostProvider {
     getPost(id: number, params?: any): Observable<any> {
         return this.http.get(`${environment.url}/posts/${id}`, {params}).pipe(
             map(data => {
+                //same as above but longer than (map(data => data))
                 return data;
             })
         );

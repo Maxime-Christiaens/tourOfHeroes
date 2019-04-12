@@ -21,6 +21,6 @@ export class HappyComponent implements OnInit {
           this.multiTodo = true; 
         }
     });
-    console.log(this.todos);
+    //console.log(this.todos);
   }
 }
